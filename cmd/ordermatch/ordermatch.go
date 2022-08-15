@@ -28,6 +28,7 @@ import (
 	"syscall"
 
 	"github.com/fatih/color"
+	_ "github.com/lib/pq"
 	"github.com/quickfixgo/enum"
 	"github.com/quickfixgo/examples/cmd/ordermatch/internal"
 	"github.com/quickfixgo/field"
@@ -287,7 +288,7 @@ func execute(cmd *cobra.Command, args []string) error {
 	app := newApplication()
 
 	printConfig(bytes.NewReader(stringData))
-	acceptor, err := quickfix.NewAcceptor(app, quickfix.NewMemoryStoreFactory(), appSettings, logFactory)
+	acceptor, err := quickfix.NewAcceptor(app, quickfix.NewSQLStoreFactory(appSettings), appSettings, logFactory)
 	if err != nil {
 		return fmt.Errorf("Unable to create Acceptor: %s\n", err)
 	}
