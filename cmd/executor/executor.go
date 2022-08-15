@@ -539,13 +539,13 @@ func execute(cmd *cobra.Command, args []string) error {
 	app := newExecutor()
 
 	printConfig(bytes.NewReader(stringData))
-	// TODO: change NewMemoryStoreFactory to NewSQLStoreFactory
-	sessionID := quickfix.SessionID{BeginString: "FIX.4.4", SenderCompID: "ISLD", TargetCompID: "TW"}
 	storageFactory := quickfix.NewSQLStoreFactory(appSettings)
-	_, err = storageFactory.Create(sessionID)
-	if err != nil {
-		return fmt.Errorf("Unable to create StorageFactory: %s\n", err)
-	}
+	// TODO: change NewMemoryStoreFactory to NewSQLStoreFactory
+	// sessionID := quickfix.SessionID{BeginString: "FIX.4.4", SenderCompID: "ISDL", TargetCompID: "TW"}
+	// _, err = storageFactory.Create(sessionID)
+	// if err != nil {
+	// 	return fmt.Errorf("Unable to create StorageFactory: %s\n", err)
+	// }
 	acceptor, err := quickfix.NewAcceptor(app, storageFactory, appSettings, logFactory)
 	if err != nil {
 		return fmt.Errorf("Unable to create Acceptor: %s\n", err)
