@@ -6,6 +6,7 @@ require (
 	github.com/fatih/color v1.12.0
 	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8 // indirect
 	github.com/kr/text v0.2.0 // indirect
+	github.com/lib/pq v1.10.6
 	github.com/mattn/go-sqlite3 v1.14.7 // indirect
 	github.com/quickfixgo/enum v0.0.0-20171007195659-2cbed3730c3e
 	github.com/quickfixgo/field v0.0.0-20171007195410-74cea5ec78c7
