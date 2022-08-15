@@ -536,6 +536,8 @@ func execute(cmd *cobra.Command, args []string) error {
 	app := newExecutor()
 
 	printConfig(bytes.NewReader(stringData))
+
+	// TODO: change NewMemoryStoreFactory to NewSQLStoreFactory
 	acceptor, err := quickfix.NewAcceptor(app, quickfix.NewMemoryStoreFactory(), appSettings, logFactory)
 	if err != nil {
 		return fmt.Errorf("Unable to create Acceptor: %s\n", err)
