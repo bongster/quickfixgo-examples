@@ -18,6 +18,7 @@ require (
 	github.com/quickfixgo/fix43 v0.0.0-20171007213001-a7ff4f2a2470
 	github.com/quickfixgo/fix44 v0.0.0-20171007213039-f090a1006218
 	github.com/quickfixgo/fix50 v0.0.0-20171007213247-d09e70735b64
+	github.com/quickfixgo/fix50sp1 v0.0.0-20171007213322-66c7df13880d // indirect
 	github.com/quickfixgo/fixt11 v0.0.0-20171007213433-d9788ca97f5d // indirect
 	github.com/quickfixgo/quickfix v0.6.1-0.20220718041433-7945e4b53d7b
 	github.com/quickfixgo/tag v0.0.0-20171007194743-cbb465760521

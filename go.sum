@@ -50,6 +50,8 @@ github.com/quickfixgo/fix44 v0.0.0-20171007213039-f090a1006218 h1:zrm7CRhis2ArB/
 github.com/quickfixgo/fix44 v0.0.0-20171007213039-f090a1006218/go.mod h1:KFN4LkI1sidKgWnUvmpDdvsa+aNvcbExtS8iPQvA9ys=
 github.com/quickfixgo/fix50 v0.0.0-20171007213247-d09e70735b64 h1:h5XDUGtA46x9WVufC35j1864nmHwGQHmeIVjB8lizaE=
 github.com/quickfixgo/fix50 v0.0.0-20171007213247-d09e70735b64/go.mod h1:3vDazktlPMaG/aB3FLKjIXtqUE9YNJlmcYvhQpdDVkU=
+github.com/quickfixgo/fix50sp1 v0.0.0-20171007213322-66c7df13880d h1:6v16XRMi3xvsYwFzWGaHmYsV/+GOTLnposwHZOXdLxA=
+github.com/quickfixgo/fix50sp1 v0.0.0-20171007213322-66c7df13880d/go.mod h1:82IehMHgwSzhLumFJempKCy1OCm6zimgWrPo/hhmzTA=
 github.com/quickfixgo/fixt11 v0.0.0-20171007213433-d9788ca97f5d h1:PlymcwOkKZXnOI3uJZu0lpnvnweTkML9YxnTuYhhzIM=
 github.com/quickfixgo/fixt11 v0.0.0-20171007213433-d9788ca97f5d/go.mod h1:/oN4Arv+/8zKshQTj+ggpWfjXuVv9bMUO93zOO6R+oM=
 github.com/quickfixgo/quickfix v0.6.1-0.20190718201950-819c58d51b95 h1:csOsA0SMLpGQxEgAH6fFjdAU/R12PMQJNmcDDKsR69Y=

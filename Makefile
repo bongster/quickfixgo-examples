@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-test: lint vet build
+test: lint vet build daniel
 
 lint:
 	golangci-lint run
@@ -23,3 +23,6 @@ build-linux:
 
 build-docker: clean build-linux
 	docker build -t quickfixgo/qf:latest .
+
+daniel: build
+	./bin/qf daniel
