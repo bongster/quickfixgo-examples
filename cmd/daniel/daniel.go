@@ -68,12 +68,34 @@ func execute(cmd *cobra.Command, args []string) error {
 
 	noPartyId := fix50sp1qr.NewNoPartyIDsRepeatingGroup()
 	noPartyId.Add().Set(field.NewPartyID("tier1@client")).Set(field.NewPartyIDSource(enum.PartyIDSource_GENERALLY_ACCEPTED_MARKET_PARTICIPANT_IDENTIFIER)).Set(field.NewPartyRole(enum.PartyRole_CLIENT_ID))
-	noRelatedSym.Add().SetNoPartyIDs(noPartyId)
+	noRelatedSym.Get(0).SetNoPartyIDs(noPartyId)
 
 	quote.SetNoRelatedSym(noRelatedSym)
 
 	quote.SetCheckSum("235")
 	fmt.Println(quote)
+	nrsg, err := quote.GetNoRelatedSym()
+	if err != nil {
+		panic(fmt.Errorf("%v", err))
+	}
+	nrs := nrsg.Get(0)
+	fmt.Println(nrs)
+	fmt.Println(nrs.HasNoLegs())
+	if !nrs.HasNoLegs() {
+		panic(fmt.Errorf("has noleg are must be exists"))
+
+	}
+
+	nlg, err := nrs.GetNoLegs()
+	if err != nil {
+		panic(fmt.Errorf("%v", err))
+	}
+	symbol, err := nlg.Get(0).GetLegSymbol()
+	fmt.Println(nlg.Get(0).GetLegSymbol())
+	if symbol != "USD/JPY" {
+		panic(fmt.Errorf("%v", err))
+	}
+
 	return nil
 }
 
