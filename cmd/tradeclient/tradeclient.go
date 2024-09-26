@@ -25,6 +25,7 @@ import (
 	"path"
 
 	"github.com/fatih/color"
+	_ "github.com/lib/pq"
 	"github.com/quickfixgo/examples/cmd/tradeclient/internal"
 	"github.com/quickfixgo/quickfix"
 	"github.com/spf13/cobra"
@@ -122,7 +123,7 @@ func execute(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("Error creating file log factory: %s,", err)
 	}
 
-	initiator, err := quickfix.NewInitiator(app, quickfix.NewMemoryStoreFactory(), appSettings, fileLogFactory)
+	initiator, err := quickfix.NewInitiator(app, quickfix.NewSQLStoreFactory(appSettings), appSettings, fileLogFactory)
 	if err != nil {
 		return fmt.Errorf("Unable to create Initiator: %s\n", err)
 	}
